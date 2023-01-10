@@ -52,7 +52,7 @@ def lanzar():
             #----------------------------
 
             #Carga de la descripción del modelo
-            direccion = input('Introduce la ruta del modelo json:\n> ')
+            direccion = input('Introduce la ruta del modelo json. Ej: Codigo Dado/modelo/modelo_4convoluciones.json\n> ')
             archivo_json = open(direccion, 'r')
             modelo_json = archivo_json.read()
             archivo_json.close()
@@ -61,7 +61,7 @@ def lanzar():
             modelo = model_from_json(modelo_json)
 
             # Cargar pesos en el modelo nuevo
-            direccion = input('\nIntroduce la ruta de los pesos:\n> ')
+            direccion = input('\nIntroduce la ruta de los pesos. Ej: Codigo Dado/modelo/modelo_4convoluciones.h5\n> ')
             modelo.load_weights(direccion)
 
             print('¡¡¡DATOS CARGADOS CORRECTAMENTE!!!')
@@ -135,7 +135,7 @@ def lanzar():
 
             continuar = 'true'
             while continuar.lower() == 'true':
-                imagen = input('Introduce la ruta de la imagen:\n> ')
+                imagen = input('Introduce la ruta de la imagen. Ej: Codigo Dado/imagenes/pantalon.jpg\n> ')
 
                 helpers.limpiar_pantalla()
                 Clasificarcion_modelo.clasificar(imagen)
